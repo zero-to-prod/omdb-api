@@ -8,6 +8,23 @@
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/omdb-api?color=f28d1a)](https://packagist.org/packages/zero-to-prod/omdb-api)
 [![License](https://img.shields.io/packagist/l/zero-to-prod/omdb-api?color=red)](https://github.com/zero-to-prod/omdb-api/blob/main/LICENSE.md)
 
+## Contents
+
+- [Introduction](#introduction)
+- [TLDR](#tldr)
+- [Requirements](#requirements)
+- [Getting an OMDb API Key](#getting-an-omdb-api-key)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Methods Overview](#methods-overview)
+    - [byIdOrTitle()](#byidortitle)
+    - [search()](#search)
+    - [poster()](#poster)
+- [Error Handling](#error-handling)
+- [Testing](#testing)
+- [Contributing](#contributing)
+
+## Introduction
 `Zerotoprod\OmdbApi` is a PHP cURL wrapper for the [OMDb API](https://www.omdbapi.com/).
 It allows you to search for movies, series, and other media, retrieve detailed information using IMDb IDs or titles, and fetch poster images.
 
@@ -27,18 +44,6 @@ $OmdbApi->search('Avatar')['Search'][0]['Year']; // 2009
 // Get the poster art of a title by its ImdbID
 $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0499549
 ```
-
-- [Requirements](#requirements)
-- [Getting an OMDb API Key](#getting-an-omdb-api-key)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Methods Overview](#methods-overview)
-    - [byIdOrTitle()](#byidortitle)
-    - [search()](#search)
-    - [poster()](#poster)
-- [Error Handling](#error-handling)
-- [Testing](#testing)
-- [Contributing](#contributing)
 
 ## Requirements
 
