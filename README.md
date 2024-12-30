@@ -28,6 +28,18 @@ $OmdbApi->search('Avatar')['Search'][0]['Year']; // 2009
 $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0499549
 ```
 
+- [Requirements](#requirements)
+- [Getting an OMDb API Key](#getting-an-omdb-api-key)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Methods Overview](#methods-overview)
+    - [byIdOrTitle()](#byidortitle)
+    - [search()](#search)
+    - [poster()](#poster)
+- [Error Handling](#error-handling)
+- [Testing](#testing)
+- [Contributing](#contributing)
+
 ## Requirements
 
 - PHP 8.1 or higher.
@@ -205,7 +217,7 @@ Get the direct URL to the poster image for a given IMDb ID.
 $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0499549
 ```
 
-### Error Handing
+### Error Handling
 
 When a request fails (for example, if no matching title is found, cURL fails to initialize, or an invalid response comes back), the returned array
 includes:
