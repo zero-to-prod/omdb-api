@@ -84,7 +84,7 @@ class OmdbApi
         if (!$title && !$imdbID) {
             return [
                 'ErrorType' => 'validation',
-                'message' => 'Either $t or $i must be provided.',
+                'message' => 'Either $title or $imdbID must be provided.',
             ];
         }
 
