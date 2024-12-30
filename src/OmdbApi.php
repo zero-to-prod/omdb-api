@@ -2,11 +2,22 @@
 
 namespace Zerotoprod\OmdbApi;
 
+use Zerotoprod\Omdb\Omdb;
+
 /**
  * A wrapper for https://www.omdbapi.com/
  */
 class OmdbApi implements OmdbApiInterface
 {
+    /**
+     * Instantiates a new instance
+     *
+     * @param  string  $apikey
+     * @param  string  $base_url
+     * @param  string  $img_url
+     *
+     * @link https://github.com/zero-to-prod/omdb-api
+     */
     public function __construct(
         public readonly string $apikey,
         public readonly string $base_url = 'https://www.omdbapi.com/',
@@ -17,7 +28,8 @@ class OmdbApi implements OmdbApiInterface
     /**
      * Returns the Poster Image.
      *
-     * @link https://www.omdbapi.com/
+     * @see  https://www.omdbapi.com/
+     * @link https://github.com/zero-to-prod/omdb-api
      */
     public function poster(string $imdbID): string
     {
@@ -69,7 +81,8 @@ class OmdbApi implements OmdbApiInterface
      * }
      *
      *
-     * @link https://www.omdbapi.com/
+     * @see  https://www.omdbapi.com/
+     * @link https://github.com/zero-to-prod/omdb-api
      */
     public function byIdOrTitle(
         ?string $title = null,
@@ -135,7 +148,8 @@ class OmdbApi implements OmdbApiInterface
      *     extra?: mixed
      * }
      *
-     * @link https://www.omdbapi.com/
+     * @see  https://www.omdbapi.com/
+     * @link https://github.com/zero-to-prod/omdb-api
      */
     public function search(
         string $title,

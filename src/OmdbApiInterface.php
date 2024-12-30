@@ -10,7 +10,8 @@ interface OmdbApiInterface
     /**
      * Returns the Poster Image.
      *
-     * @link https://www.omdbapi.com/
+     * @see  https://www.omdbapi.com/
+     * @link https://github.com/zero-to-prod/omdb-api
      */
     public function poster(string $imdbID): string;
 
@@ -59,7 +60,8 @@ interface OmdbApiInterface
      * }
      *
      *
-     * @link https://www.omdbapi.com/
+     * @see  https://www.omdbapi.com/
+     * @link https://github.com/zero-to-prod/omdb-api
      */
     public function byIdOrTitle(
         ?string $title = null,
@@ -99,7 +101,8 @@ interface OmdbApiInterface
      *     extra?: mixed
      * }
      *
-     * @link https://www.omdbapi.com/
+     * @see  https://www.omdbapi.com/
+     * @link https://github.com/zero-to-prod/omdb-api
      */
     public function search(
         string $title,
