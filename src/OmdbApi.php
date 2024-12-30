@@ -15,7 +15,9 @@ class OmdbApi
     }
 
     /**
-     * Returns the Poster Image
+     * Returns the Poster Image.
+     *
+     * @link https://www.omdbapi.com/
      */
     public function poster(string $imdbID): string
     {
@@ -23,6 +25,8 @@ class OmdbApi
     }
 
     /**
+     * Retrieve detailed information about a specific movie, TV series, or episode by either its IMDb ID or title.
+     *
      * @param  string|null  $title      *Optional. Production title to search for (e.g. 'Avatar'). *Either `$t` or `$i` must be specified.
      * @param  string|null  $imdbID     *Optional. A valid IMDb ID (e.g. 'tt1285016'). *Either `$t` or `$i` must be specified.
      * @param  string|null  $type       Optional. Type of result to return (movie, series, episode)
@@ -63,6 +67,9 @@ class OmdbApi
      *     message: string,
      *     extra?: mixed
      * }
+     *
+     *
+     * @link https://www.omdbapi.com/
      */
     public function byIdOrTitle(
         ?string $title = null,
@@ -102,6 +109,8 @@ class OmdbApi
     }
 
     /**
+     * Search for multiple titles using a keyword.
+     *
      * @param  string       $title     Required. Production title to search for (e.g. 'Avatar').
      * @param  string|null  $type      Optional. Type of result to return (movie, series, episode)
      * @param  int|null     $year      Optional. Year of release.
@@ -125,6 +134,8 @@ class OmdbApi
      *     message: string,
      *     extra?: mixed
      * }
+     *
+     * @link https://www.omdbapi.com/
      */
     public function search(
         string $title,
