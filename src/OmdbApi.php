@@ -5,7 +5,7 @@ namespace Zerotoprod\OmdbApi;
 /**
  * A wrapper for https://www.omdbapi.com/
  */
-class OmdbApi
+class OmdbApi implements OmdbApiInterface
 {
     public function __construct(
         public readonly string $apikey,
@@ -165,7 +165,7 @@ class OmdbApi
         );
     }
 
-    public function curl(array $options = []): array
+    private function curl(array $options = []): array
     {
         $ch = curl_init();
         if ($ch === false) {
