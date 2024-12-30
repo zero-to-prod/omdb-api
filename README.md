@@ -8,7 +8,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/omdb-api?color=f28d1a)](https://packagist.org/packages/zero-to-prod/omdb-api)
 [![License](https://img.shields.io/packagist/l/zero-to-prod/omdb-api?color=red)](https://github.com/zero-to-prod/omdb-api/blob/main/LICENSE.md)
 
-`Zerotoprod\OmdbApi` is a PHP cURL wrapper for the [OMDb API](https://www.omdbapi.com/). 
+`Zerotoprod\OmdbApi` is a PHP cURL wrapper for the [OMDb API](https://www.omdbapi.com/).
 It allows you to search for movies, series, and other media, retrieve detailed information using IMDb IDs or titles, and fetch poster images.
 
 ## TLDR
@@ -29,30 +29,37 @@ $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0
 ```
 
 ## Requirements
+
 - PHP 8.0 or higher.
 - cURL extension enabled (typically enabled by default in most PHP installations).
 - A valid [OMDb API key](https://www.omdbapi.com/apikey.aspx). A free key is typically available.
 
 ## Getting an OMDb API Key
+
 1. Go to the [OMDb API website](https://www.omdbapi.com/apikey.aspx).
 2. Sign up for a free or paid plan depending on your usage requirements.
 3. After registering, you will receive an API Key that you must pass to the OmdbApi class during initialization.
 
 ## Installation
+
 Install `Zerotoprod\OmdbApi` via [Composer](https://getcomposer.org/):
+
 ```shell
 composer require zero-to-prod/omdb-api
 ```
+
 This will add the package to your project’s dependencies and create an autoloader entry for it.
 
-
 ## Usage
+
 Initialization
+
 ```php
 use Zerotoprod\OmdbApi\OmdbApi;
 
 $OmdbApi = new OmdbApi('apiKey');
 ```
+
 You can also customize the base URL and the poster URL if you need to (for example, to proxy through another service):
 
 ```php
@@ -68,6 +75,7 @@ $OmdbApi = new OmdbApi(
 Below is a summary of the primary methods exposed by this package:
 
 ### `byIdOrTitle()`
+
 Retrieve detailed information about a specific movie, TV series, or episode by either its IMDb ID or title.
 
 ```php
@@ -82,7 +90,9 @@ public function byIdOrTitle(
     ?array  $CURLOPT = [CURLOPT_TIMEOUT => 10] // An associative array of [cURL options](https://www.php.net/manual/en/function.curl-setopt.php). Defaults to [CURLOPT_TIMEOUT => 10].
 ): array
 ```
+
 Returns on Error
+
 ```json
 {
   "ErrorType": "string",
@@ -90,7 +100,9 @@ Returns on Error
   "extra": "optional, mixed"
 }
 ```
+
 Returns Data
+
 ```json
 {
   "Title": "Avatar",
@@ -133,7 +145,9 @@ Returns Data
   "Response": "True"
 }
 ```
+
 ### `search()`
+
 Search for multiple titles using a keyword.
 
 ```php
@@ -147,7 +161,9 @@ public function search(
     ?array $CURLOPT = [CURLOPT_TIMEOUT => 10] // An associative array of [cURL options](https://www.php.net/manual/en/function.curl-setopt.php). Defaults to [CURLOPT_TIMEOUT => 10].
 ): array
 ```
+
 Returns on Error
+
 ```json
 {
   "ErrorType": "string",
@@ -155,38 +171,45 @@ Returns on Error
   "extra": "optional, mixed"
 }
 ```
+
 Returns Data
+
 ```json
 {
-    "Search": [
-        {
-            "Title": "Avatar",
-            "Year": "2009",
-            "imdbID": "tt0499549",
-            "Type": "movie",
-            "Poster": "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg"
-        },
-        {
-            "Title": "Avatar: The Way of Water",
-            "Year": "2022",
-            "imdbID": "tt1630029",
-            "Type": "movie",
-            "Poster": "https://m.media-amazon.com/images/M/MV5BNmQxNjZlZTctMWJiMC00NGMxLWJjNTctNTFiNjA1Njk3ZDQ5XkEyXkFqcGc@._V1_SX300.jpg"
-        }
-    ],
-    "totalResults": "113",
-    "Response": "True"
+  "Search": [
+    {
+      "Title": "Avatar",
+      "Year": "2009",
+      "imdbID": "tt0499549",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Avatar: The Way of Water",
+      "Year": "2022",
+      "imdbID": "tt1630029",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNmQxNjZlZTctMWJiMC00NGMxLWJjNTctNTFiNjA1Njk3ZDQ5XkEyXkFqcGc@._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "113",
+  "Response": "True"
 }
 ```
 
 ### `poster()`
+
 Get the direct URL to the poster image for a given IMDb ID.
+
 ```php
 $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0499549
 ```
 
 ### Error Handing
-When a request fails (for example, if no matching title is found, cURL fails to initialize, or an invalid response comes back), the returned array includes:
+
+When a request fails (for example, if no matching title is found, cURL fails to initialize, or an invalid response comes back), the returned array
+includes:
+
 ```php
 [
     'ErrorType' => 'validation' | 'curl' | 'server',
@@ -194,16 +217,23 @@ When a request fails (for example, if no matching title is found, cURL fails to 
     'extra'     => [...optional additional data...]
 ]
 ```
+
 ## Testing
+
 This package uses [PHPUnit](https://phpunit.de/) for testing.
 Run the tests locally:
+
 ```shell
 ./vendor/bin/phpunit
 ```
+
 Ensure you have installed all the development dependencies (composer install) before running the tests.
+
 ## Contributing
+
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues](https://github.com/zero-to-prod/omdb-api/issues) page if you want to contribute.
+
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
 3. Commit changes (`git commit -m 'Add some feature'`).
