@@ -108,59 +108,49 @@ public function byIdOrTitle(
 ): array
 ```
 
-Returns on Error
+Returns an [error](#error-handling) or this response:
 
-```json
-{
-  "ErrorType": "string",
-  "message": "string",
-  "extra": "optional, mixed"
-}
-```
-
-Returns Data
-
-```json
-{
-  "Title": "Avatar",
-  "Year": "2009",
-  "Rated": "PG-13",
-  "Released": "18 Dec 2009",
-  "Runtime": "162 min",
-  "Genre": "Action, Adventure, Fantasy",
-  "Director": "James Cameron",
-  "Writer": "James Cameron",
-  "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver",
-  "Plot": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-  "Language": "English, Spanish",
-  "Country": "United States, United Kingdom",
-  "Awards": "Won 3 Oscars. 91 wins & 131 nominations total",
-  "Poster": "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg",
-  "Ratings": [
-    {
-      "Source": "Internet Movie Database",
-      "Value": "7.9/10"
-    },
-    {
-      "Source": "Rotten Tomatoes",
-      "Value": "81%"
-    },
-    {
-      "Source": "Metacritic",
-      "Value": "83/100"
-    }
+```php
+[
+  "Title" => "Avatar",
+  "Year" => "2009",
+  "Rated" => "PG-13",
+  "Released" => "18 Dec 2009",
+  "Runtime" => "162 min",
+  "Genre" => "Action, Adventure, Fantasy",
+  "Director" => "James Cameron",
+  "Writer" => "James Cameron",
+  "Actors" => "Sam Worthington, Zoe Saldana, Sigourney Weaver",
+  "Plot" => "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+  "Language" => "English, Spanish",
+  "Country" => "United States, United Kingdom",
+  "Awards" => "Won 3 Oscars. 91 wins & 131 nominations total",
+  "Poster" => "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg",
+  "Ratings" => [
+    [
+      "Source" => "Internet Movie Database",
+      "Value" => "7.9/10"
+    ],
+    [
+      "Source" => "Rotten Tomatoes",
+      "Value" => "81%"
+    ],
+    [
+      "Source" => "Metacritic",
+      "Value" => "83/100"
+    ]
   ],
-  "Metascore": "83",
-  "imdbRating": "7.9",
-  "imdbVotes": "1,411,534",
-  "imdbID": "tt0499549",
-  "Type": "movie",
-  "DVD": "N/A",
-  "BoxOffice": "$785,221,649",
-  "Production": "N/A",
-  "Website": "N/A",
-  "Response": "True"
-}
+  "Metascore" => "83",
+  "imdbRating" => "7.9",
+  "imdbVotes" => "1,411,534",
+  "imdbID" => "tt0499549",
+  "Type" => "movie",
+  "DVD" => "N/A",
+  "BoxOffice" => "$785,221,649",
+  "Production" => "N/A",
+  "Website" => "N/A",
+  "Response" => "True"
+];
 ```
 
 ### `search()`
@@ -179,39 +169,29 @@ public function search(
 ): array
 ```
 
-Returns on Error
+Returns an [error](#error-handling) or this response:
 
-```json
-{
-  "ErrorType": "string",
-  "message": "string",
-  "extra": "optional, mixed"
-}
-```
-
-Returns Data
-
-```json
-{
-  "Search": [
-    {
-      "Title": "Avatar",
-      "Year": "2009",
-      "imdbID": "tt0499549",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Avatar: The Way of Water",
-      "Year": "2022",
-      "imdbID": "tt1630029",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNmQxNjZlZTctMWJiMC00NGMxLWJjNTctNTFiNjA1Njk3ZDQ5XkEyXkFqcGc@._V1_SX300.jpg"
-    }
+```php
+[
+  "Search" => [
+    [
+      "Title" => "Avatar",
+      "Year" => "2009",
+      "imdbID" => "tt0499549",
+      "Type" => "movie",
+      "Poster" => "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg"
+    ],
+    [
+      "Title" => "Avatar: The Way of Water",
+      "Year" => "2022",
+      "imdbID" => "tt1630029",
+      "Type" => "movie",
+      "Poster" => "https://m.media-amazon.com/images/M/MV5BNmQxNjZlZTctMWJiMC00NGMxLWJjNTctNTFiNjA1Njk3ZDQ5XkEyXkFqcGc@._V1_SX300.jpg"
+    ]
   ],
-  "totalResults": "113",
-  "Response": "True"
-}
+  "totalResults" => "113",
+  "Response" => "True"
+];
 ```
 
 ### `poster()`
