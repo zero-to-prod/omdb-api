@@ -30,7 +30,7 @@ $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0
 
 ## Requirements
 
-- PHP 8.0 or higher.
+- PHP 8.1 or higher.
 - cURL extension enabled (typically enabled by default in most PHP installations).
 - A valid [OMDb API key](https://www.omdbapi.com/apikey.aspx). A free key is typically available.
 
