@@ -13,7 +13,7 @@
 - [Introduction](#introduction)
 - [TLDR](#tldr)
 - [Requirements](#requirements)
-- [Getting an OMDb API Key](#getting-an-omdb-api-key)
+  - [Getting an OMDb API Key](#getting-an-omdb-api-key)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Methods Overview](#methods-overview)
@@ -51,7 +51,7 @@ $OmdbApi->poster('tt0499549'); // https://img.omdbapi.com/?apikey=8f8423aa&i=tt0
 - cURL extension enabled (typically enabled by default in most PHP installations).
 - A valid [OMDb API key](https://www.omdbapi.com/apikey.aspx). A free key is typically available.
 
-## Getting an OMDb API Key
+### Getting an OMDb API Key
 
 1. Go to the [OMDb API website](https://www.omdbapi.com/apikey.aspx).
 2. Sign up for a free or paid plan depending on your usage requirements.
