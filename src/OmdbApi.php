@@ -10,6 +10,19 @@ use Zerotoprod\Omdb\Omdb;
 class OmdbApi implements OmdbApiInterface
 {
     /**
+     * @var string
+     */
+    public $apikey;
+    /**
+     * @var string
+     */
+    public $base_url;
+    /**
+     * @var string
+     */
+    public $img_url;
+
+    /**
      * Instantiates a new instance
      *
      * @param  string  $apikey
@@ -19,10 +32,13 @@ class OmdbApi implements OmdbApiInterface
      * @link https://github.com/zero-to-prod/omdb-api
      */
     public function __construct(
-        public readonly string $apikey,
-        public readonly string $base_url = 'https://www.omdbapi.com/',
-        public readonly string $img_url = 'https://img.omdbapi.com/'
+        string $apikey,
+        string $base_url = 'https://www.omdbapi.com/',
+        string $img_url = 'https://img.omdbapi.com/'
     ) {
+        $this->apikey = $apikey;
+        $this->base_url = $base_url;
+        $this->img_url = $img_url;
     }
 
     /**

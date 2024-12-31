@@ -2,9 +2,9 @@ name: tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        php-version: [ php83, php82, php81 ]
+        php-version: [php71, php72, php73, php74, php80, php81, php82, php83]
 
     steps:
       - uses: actions/checkout@v4
