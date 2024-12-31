@@ -2,14 +2,14 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\OmdbApi\OmdbApi;
 
 class OmdbTest extends TestCase
 {
 
-    #[Test] public function instantiation(): void
+    /** @test */
+    public function instantiation(): void
     {
         $OmdbApi = new OmdbApi('apiKey');
 

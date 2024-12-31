@@ -1,4 +1,114 @@
 services:
+  php71:
+    build:
+      context: docker/php71
+      target: base
+    volumes:
+      - ./:/app
+
+  php71debug:
+    build:
+      context: docker/php71
+      target: debug
+    volumes:
+      - ./:/app
+      - ./docker/php71:/usr/local/etc/php
+
+  php71composer:
+    build:
+      context: docker/php71
+      target: composer
+    volumes:
+      - ./:/app
+
+  php72:
+    build:
+      context: docker/php72
+      target: base
+    volumes:
+      - ./:/app
+
+  php72debug:
+    build:
+      context: docker/php72
+      target: debug
+    volumes:
+      - ./:/app
+      - ./docker/php72:/usr/local/etc/php
+
+  php72composer:
+    build:
+      context: docker/php72
+      target: composer
+    volumes:
+      - ./:/app
+
+  php73:
+    build:
+      context: docker/php73
+      target: base
+    volumes:
+      - ./:/app
+
+  php73debug:
+    build:
+      context: docker/php73
+      target: debug
+    volumes:
+      - ./:/app
+      - ./docker/php73:/usr/local/etc/php
+
+  php73composer:
+    build:
+      context: docker/php73
+      target: composer
+    volumes:
+      - ./:/app
+
+  php74:
+    build:
+      context: docker/php74
+      target: base
+    volumes:
+      - ./:/app
+
+  php74debug:
+    build:
+      context: docker/php74
+      target: debug
+    volumes:
+      - ./:/app
+      - ./docker/php74:/usr/local/etc/php
+
+  php74composer:
+    build:
+      context: docker/php74
+      target: composer
+    volumes:
+      - ./:/app
+
+  php80:
+    build:
+      context: docker/php80
+      target: base
+    volumes:
+      - ./:/app
+
+  php80debug:
+    build:
+      context: docker/php80
+      target: debug
+    volumes:
+      - ./:/app
+      - ./docker/php80:/usr/local/etc/php
+
+  php80composer:
+    build:
+      context: docker/php80
+      target: composer
+    volumes:
+      - ./:/app
+
   php81:
     build:
       context: docker/php81
