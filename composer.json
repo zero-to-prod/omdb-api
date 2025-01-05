@@ -11,8 +11,8 @@
   "support": {
     "email": "dave0016@gmail.com",
     "issues": "https://github.com/zero-to-prod/omdb-api/issues",
-    "source": "https://github.com/zero-to-prod/data-model",
-    "docs": "https://zero-to-prod.github.io/omdb-api/",
+    "source": "https://github.com/zero-to-prod/omdb-api",
+    "docs": "https://zero-to-prod.github.io/omdb-api",
     "security": "https://github.com/zero-to-prod/omdb-api/blob/main/SECURITY.md"
   },
   "license": "MIT",
