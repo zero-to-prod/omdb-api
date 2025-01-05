@@ -1,21 +1,12 @@
-# run-tests.sh
+#!/bin/bash
 set -e
 
-php_versions=("php83" "php82" "php81" "php80" "php74" "php73" "php72" "php71")
+php_versions=("84" "83" "82" "81" "80" "74" "73" "72" "71")
 
 for version in "${php_versions[@]}"; do
-  if [ -f composer.lock ]; then
-    echo "removing composer.lock"
-    rm composer.lock
-  fi
+  docker compose run --rm php"${version}composer" composer update --no-cache
 
-  docker compose run --rm "$version"composer composer install
-
-  echo "Running tests on $version..."
-  if ! docker compose run --rm "$version" vendor/bin/phpunit; then
-    echo "Tests failed on $version."
+  if ! docker compose run --rm php"${version}" vendor/bin/phpunit --configuration phpunit"${version}".xml; then
     exit 1
   fi
 done
-
-echo "All tests passed!"
